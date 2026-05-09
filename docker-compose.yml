@@ -48,8 +48,8 @@ services:
       - REDIS_URL=redis://redis:6379
       - SECRET_KEY=ybtz3h32s4dwPU4xHvo2wJlQnRmx/+3hfstAZcn9wVw=
       - LOG_LEVEL=INFO
-      - PUBLIC_URL=http://localhost:8080
-      - MANAGEMENT_BASE_URL=http://localhost:8080
+      - PUBLIC_URL=https://hap.gotvn.net
+      - MANAGEMENT_BASE_URL=https://hap.gotvn.net
     volumes:
       - haproxy_configs:/etc/haproxy
     expose:
