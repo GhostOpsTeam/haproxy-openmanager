@@ -46,8 +46,7 @@ services:
     environment:
       - DATABASE_URL=postgresql://haproxy_user:haproxy_pass@postgres:5432/haproxy_openmanager
       - REDIS_URL=redis://redis:6379
-      - SECRET_KEY=your-secret-key-change-this-in-production
-      - DEBUG=False
+      - SECRET_KEY=ybtz3h32s4dwPU4xHvo2wJlQnRmx/+3hfstAZcn9wVw=
       - LOG_LEVEL=INFO
       - PUBLIC_URL=http://localhost:8080
       - MANAGEMENT_BASE_URL=http://localhost:8080
