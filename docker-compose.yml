@@ -110,46 +110,6 @@ services:
       timeout: 10s
       retries: 3
 
-  # HAProxy Instance (for testing)
-  haproxy:
-    image: haproxy:2.8-alpine
-    container_name: haproxy-instance
-    volumes:
-      - ./haproxy/haproxy-simple.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    ports:
-      - "80:80"
-      - "8404:8404"
-    networks:
-      - haproxy-network
-
-  # Remote HAProxy Instance 1 (Production)
-  haproxy-remote1:
-    image: haproxy:2.8-alpine
-    container_name: haproxy-remote1
-    volumes:
-      - ./haproxy/haproxy-simple.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    ports:
-      - "8001:80"
-      - "8405:8404"
-    networks:
-      - haproxy-network
-    environment:
-      - HAPROXY_ENV=production
-
-  # Remote HAProxy Instance 2 (Staging)
-  haproxy-remote2:
-    image: haproxy:2.8-alpine
-    container_name: haproxy-remote2
-    volumes:
-      - ./haproxy/haproxy-simple.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    ports:
-      - "8002:80"
-      - "8406:8404"
-    networks:
-      - haproxy-network
-    environment:
-      - HAPROXY_ENV=staging
-
 volumes:
   postgres_data:
   haproxy_configs:
